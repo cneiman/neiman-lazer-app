@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "87e8446501e2d4592561fe48ce3f9344"
+name = "neiman-lazer-dev"
+handle = "neiman-lazer-dev"
+application_url = "https://chat-avon-reproductive-shakespeare.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "neiman-lazer-dev.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products"
+
+[auth]
+redirect_urls = [
+  "https://chat-avon-reproductive-shakespeare.trycloudflare.com/auth/callback",
+  "https://chat-avon-reproductive-shakespeare.trycloudflare.com/auth/shopify/callback",
+  "https://chat-avon-reproductive-shakespeare.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2025-01"
+
+[pos]
+embedded = false
