@@ -3,7 +3,7 @@
 client_id = "87e8446501e2d4592561fe48ce3f9344"
 name = "neiman-lazer-dev"
 handle = "neiman-lazer-dev"
-application_url = "https://api-practice-pacific-classic.trycloudflare.com"
+application_url = "https://awards-committed-explained-healthcare.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_customer_events,read_products,write_checkout_branding_settings,wr
 
 [auth]
 redirect_urls = [
-  "https://api-practice-pacific-classic.trycloudflare.com/auth/callback",
-  "https://api-practice-pacific-classic.trycloudflare.com/auth/shopify/callback",
-  "https://api-practice-pacific-classic.trycloudflare.com/api/auth/callback"
+  "https://awards-committed-explained-healthcare.trycloudflare.com/auth/callback",
+  "https://awards-committed-explained-healthcare.trycloudflare.com/auth/shopify/callback",
+  "https://awards-committed-explained-healthcare.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
