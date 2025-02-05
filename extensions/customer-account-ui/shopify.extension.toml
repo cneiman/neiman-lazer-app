@@ -1,0 +1,21 @@
+api_version = "2025-01"
+
+[[extensions]]
+type = "ui_extension"
+name = "customer-account-ui"
+handle = "customer-account-ui"
+
+[[extensions.targeting]]
+module = "./src/OrderStatusPageTitlePointsBlockExtension.js"
+target = "customer-account.order-status.block.render"
+
+[[extensions.targeting]]
+module = "./src/CustomerFulfillmentDetailsDelivery.js"
+target = "customer-account.order-status.fulfillment-details.render-after"
+
+[[extensions.targeting]]
+module = "./src/ProfileBlockExtension.js"
+target = "customer-account.profile.block.render"
+
+[extensions.capabilities]
+api_access = true
