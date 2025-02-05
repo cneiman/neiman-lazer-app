@@ -3,7 +3,7 @@
 client_id = "87e8446501e2d4592561fe48ce3f9344"
 name = "neiman-lazer-dev"
 handle = "neiman-lazer-dev"
-application_url = "https://various-phrase-slot-toolkit.trycloudflare.com"
+application_url = "https://performances-update-behind-broke.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_products,write_products"
+scopes = "read_customer_events,read_products,write_checkout_branding_settings,write_pixels,write_products"
 
 [auth]
 redirect_urls = [
-  "https://various-phrase-slot-toolkit.trycloudflare.com/auth/callback",
-  "https://various-phrase-slot-toolkit.trycloudflare.com/auth/shopify/callback",
-  "https://various-phrase-slot-toolkit.trycloudflare.com/api/auth/callback"
+  "https://performances-update-behind-broke.trycloudflare.com/auth/callback",
+  "https://performances-update-behind-broke.trycloudflare.com/auth/shopify/callback",
+  "https://performances-update-behind-broke.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
