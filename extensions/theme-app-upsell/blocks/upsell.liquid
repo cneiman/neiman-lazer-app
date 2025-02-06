@@ -1,0 +1,96 @@
+<div class="shopify-app-block upsell-block">
+  {% if block.settings.selection_type == 'product' and block.settings.product != blank %}
+    {% assign product = all_products[block.settings.product] %}
+  {% elsif block.settings.selection_type == 'collection' and block.settings.collection != blank %}
+    {% assign collection = collections[block.settings.collection] %}
+    {% assign product = collection.products | first %}
+  {% endif %}
+
+  {% if product != blank %}
+    <div class="upsell-container">
+      <h2 class="text-sh2 uppercase mb-30 text-center">{{ block.settings.heading }}</h2>
+
+      <div class="upsell-product flex gap-30 items-center">
+        <div class="upsell-product-image flex-shrink-0">
+          <img src="{{ product.featured_image | img_url: '300x300', crop: 'center' }}"
+               alt="{{ product.title | escape }}"
+               loading="lazy"
+               width="300"
+               height="300"
+               class="block w-full h-auto rounded">
+        </div>
+
+        <div class="upsell-product-details flex-grow">
+          <h3 class="text-body-3 mb-10">{{ product.title }}</h3>
+          <div class="text-body-3 mb-20">
+            {{ product.price | money }}
+          </div>
+
+          <form method="post" action="/cart/add" class="upsell-form">
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <button type="submit"
+                    class="upsell-add-to-cart button w-full relative group/button"
+                    {% unless product.available %}disabled{% endunless %}>
+              <span class="transition-opacity group-[.loading]/button:opacity-0">
+                <span class="group-disabled/button:hidden">Add to Cart</span>
+                <span class="hidden group-disabled/button:inline">Sold Out</span>
+              </span>
+              <span class="inset flex items-center justify-center transition-opacity opacity-0 group-[.loading]/button:opacity-100">
+                {% render 'loading-spinner' %}
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Upsell",
+  "target": "section",
+  "stylesheet": "upsell.css",
+  "javascript": "upsell.js",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Selection"
+    },
+    {
+      "type": "radio",
+      "id": "selection_type",
+      "label": "Selection Type",
+      "options": [
+        {
+          "value": "product",
+          "label": "Single Product"
+        },
+        {
+          "value": "collection",
+          "label": "Collection"
+        }
+      ],
+      "default": "product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Select a product to upsell"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Select a collection to randomly choose products from"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "You Might Also Like"
+    }
+  ]
+}
+{% endschema %}
