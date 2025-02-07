@@ -3,7 +3,7 @@
 client_id = "87e8446501e2d4592561fe48ce3f9344"
 name = "neiman-lazer-dev"
 handle = "neiman-lazer-dev"
-application_url = "https://ended-alignment-yarn-due.trycloudflare.com"
+application_url = "https://neiman-lazer-app.onrender.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_customer_events,read_products,write_cart_transforms,write_checkou
 
 [auth]
 redirect_urls = [
-  "https://ended-alignment-yarn-due.trycloudflare.com/auth/callback",
-  "https://ended-alignment-yarn-due.trycloudflare.com/auth/shopify/callback",
-  "https://ended-alignment-yarn-due.trycloudflare.com/api/auth/callback"
+  "https://neiman-lazer-app.onrender.com/auth/callback",
+  "https://neiman-lazer-app.onrender.com/auth/shopify/callback",
+  "https://neiman-lazer-app.onrender.com/api/auth/callback"
 ]
 
 [webhooks]
