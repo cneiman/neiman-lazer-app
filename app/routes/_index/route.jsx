@@ -13,10 +13,6 @@ export const loader = async ({ request }) => {
   return { showForm: Boolean(login) };
 };
 
-fetch("/apps/text-endpoint?shop=neiman-lazer-dev.myshopify.com")
-  .then(response => response.json())
-  .then(data => console.log(data));
-
 export default function App() {
   const { showForm } = useLoaderData();
 
